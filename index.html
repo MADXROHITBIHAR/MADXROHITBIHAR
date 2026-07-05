@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MADXROHIT FULL PRO</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f6fb;
+    transition:0.3s;
+}
+
+body.dark{
+    background:#0f172a;
+    color:white;
+}
+
+.header{
+    text-align:center;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+    color:white;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    gap:10px;
+    padding:10px;
+}
+
+input{
+    flex:1;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.darkBtn{
+    background:#111;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+}
+
+/* SOCIAL */
+.social{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    padding:10px;
+}
+
+.social a{
+    padding:10px 14px;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.telegram{background:#229ED9;}
+.whatsapp{background:#25D366;}
+
+/* CARD */
+.container{
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.card{
+    display:flex;
+    gap:12px;
+    padding:12px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+body.dark .card{
+    background:#1e293b;
+}
+
+.card img{
+    width:55px;
+    height:55px;
+    border-radius:12px;
+}
+
+.name{
+    font-weight:bold;
+}
+
+.tag{
+    font-size:12px;
+    color:gray;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:6px;
+    padding:7px 12px;
+    border-radius:8px;
+    background:#4f46e5;
+    color:white;
+    font-size:12px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">🚀 MADXROHIT ALL APPS</div>
+
+<div class="topbar">
+    <input type="text" id="search" placeholder="Search apps...">
+    <button class="darkBtn" onclick="toggleDark()">🌙</button>
+</div>
+
+<div class="social">
+    <a class="telegram" href="https://t.me/Study_group_App" target="_blank">Telegram</a>
+    <a class="whatsapp" href="https://whatsapp.com/channel/0029Vb6FhReEquiLz1jNH00o" target="_blank">WhatsApp</a>
+</div>
+
+<div class="container" id="app"></div>
+
+<script>
+
+const data = {
+ "apps": [ 
+    { "name":"KHAN GLOBAL STUDIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s","study_link":"https://spidykgs.vercel.app","tag":"Popular"},
+    { "name":"KHAN GLOBAL STUDIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s","study_link":"https://kgsfreebatchall.vercel.app/","tag":"Popular"},
+    { "name":"SELECTION WAY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10","study_link":"https://spidyway.vercel.app","tag":"Popular"},
+    { "name":"SELECTION WAY TEST SERIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10","study_link":"https://testrankingfree.vercel.app/","tag":"Popular"},
+    { "name":"ROJGAR WITH ANKIT","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqvsASIxLwsfdqSKs1qm-bUoY0Ko0vLP6rPGzay47DA&s","study_link":"https://rojgarwithankitt.vercel.app","tag":""},
+    { "name":"STUDY IQ (NEW BATCHES)","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhQ7uIPWu_D8K_xsqsNscViPXM3QiKUAHIXD9Hkontw&s","study_link":"https://sangam.free.nf/studyiq/","tag":""},
+    { "name":"STUDY IQ (OLD BATCHES)","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhQ7uIPWu_D8K_xsqsNscViPXM3QiKUAHIXD9Hkontw&s","study_link":"http://spidyiq.vercel.app","tag":""},
+    { "name":"TESTBOOK","image":"https://play-lh.googleusercontent.com/oZKb4MS_3fA2URqyMW2QvWqm7Bhjikz_L8002o4VLpIfVUmcVXZUa1OI0r5QS_8b3XA=w240-h480-rw","study_link":"https://testbook.examsaathi.site/","tag":"Test❤‍🔥"},
+    { "name":"TESTBOOK","image":"https://play-lh.googleusercontent.com/oZKb4MS_3fA2URqyMW2QvWqm7Bhjikz_L8002o4VLpIfVUmcVXZUa1OI0r5QS_8b3XA=w240-h480-rw","study_link":"https://test.pwthor.live/","tag":"Test❤‍🔥"},
+    { "name":"CDS JOURNEY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS72szB7OQoXI1HfSnyzGvSmwXk5fNhmbn7V_1dZlZbjA&s=10","study_link":"https://cds-journey-omega.vercel.app/","tag":"CDS🇮🇳"},
+    { "name":"PHYSICS WALLAH","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s","study_link":"https://pwthor.live/auth","tag":"Trending"},
+    { "name":"Next Topper","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IXk64isT48glTv-5DobS3YZdAsGHOQV9J3q8IPy8i4kKhyWAcgRWLAEw&s=10","study_link":"https://nt.rarestudy.in/","tag":"Popular"},
+    { "name":"Next Topper","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IXk64isT48glTv-5DobS3YZdAsGHOQV9J3q8IPy8i4kKhyWAcgRWLAEw&s=10","study_link":"https://backbencherz.netlify.app/","tag":"Popular"},
+    { "name":"Vidya Education","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM6hZJkUEeH2DSB_NVVIMcpHGrIE5Es7bEx3wMf_0ZEA&s=10","study_link":"https://learnfree4u.online/VIDYAE/index.php","tag":"New"},
+    { "name":"CW CTET","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAB_URIwHn37n8wv-FR6lhXAS7clYsz2wD_VbdNlJlGVj6S3KVb1i0cXbi&s=10","study_link":"https://sangam.free.nf/CW/course_index.html","tag":"New"},
+    { "name":"CAREERWILL","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s","study_link":"https://runtkyp.xo.je/","tag":"New"},
+    { "name":"VIBRANT ACADEMY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTmuYdKB7UQncU20kBaRb77EZ0ud1wr_Eusl-E_NMvDQ&s=10","study_link":"https://learnbyakp.online/vibrant1","tag":"New"},
+    { "name":"UNACADEMY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMoD260MXEH1aYOimogVz-ZN5bBDHcEJlfXcDX4dbHJg&s=10","study_link":"https://rwalive.xo.je/batches.html","tag":"New"},
+    { "name":"RG VIKRAMJEET","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvpPDIhLQa9pfBaInjOqZgxFsWpDwSWghhJBmHFEti9w&s=10","study_link":"http://rgvikramjeetv1.netlify.app","tag":"Popular"},
+    { "name":"AASH EDUCATION","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGEgPfTb5u0BZr9zrh89ZvGyADlKEe5FCwboZyiNwhaw&s","study_link":"https://kgsfreebatch.free.nf/skjha/home.html?i=1","tag":"New"},
+    { "name":"Winners Institute","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZgproSM4zVC2GOzDXn_1HkZYJ6IvdhM7kY3btSgUXWg&s=10","study_link":"https://kgsfreebatch.free.nf/winn/home.html","tag":"New"},
+    { "name":"Gyanbindu","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFvhxybNgyZB2ctiSjQkoDvGk9KjyK-tG34NGXWwaRA&s=10","study_link":"https://kgsfreebatch.free.nf/tky/home.html?domainId=3377","tag":"New"},
+    { "name":"Coding & Skills","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFcT30jUWxKpkI8NPfMpaW3B6cNPf8ZLy4dRQH2kKU8XrimIrHV_aJbk&s=10","study_link":"https://gatewayclasses.vercel.app","tag":"Coding"}
+ ]
+};
+
+function render(list){
+    const app = document.getElementById("app");
+    app.innerHTML="";
+    list.forEach(a=>{
+        app.innerHTML+=`
+        <div class="card">
+            <img src="${a.image}">
+            <div>
+                <div class="name">${a.name}</div>
+                <div class="tag">${a.tag}</div>
+                <a class="btn" href="${a.study_link}" target="_blank">Study</a>
+            </div>
+        </div>`;
+    });
+}
+render(data.apps);
+
+/* SEARCH */
+document.getElementById("search").addEventListener("input",function(){
+    let v=this.value.toLowerCase();
+    render(data.apps.filter(a=>a.name.toLowerCase().includes(v)));
+});
+
+/* DARK MODE */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

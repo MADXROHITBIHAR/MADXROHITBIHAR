@@ -27,7 +27,6 @@ body.dark{
     color:white;
 }
 
-/* TOP BAR */
 .topbar{
     display:flex;
     gap:10px;
@@ -49,7 +48,6 @@ input{
     border-radius:10px;
 }
 
-/* SOCIAL */
 .social{
     display:flex;
     justify-content:center;
@@ -69,7 +67,6 @@ input{
 .telegram{background:#229ED9;}
 .whatsapp{background:#25D366;}
 
-/* CARD */
 .container{
     padding:10px;
     display:flex;
@@ -96,14 +93,8 @@ body.dark .card{
     border-radius:12px;
 }
 
-.name{
-    font-weight:bold;
-}
-
-.tag{
-    font-size:12px;
-    color:gray;
-}
+.name{font-weight:bold;}
+.tag{font-size:12px;color:gray;}
 
 .btn{
     display:inline-block;
@@ -135,32 +126,10 @@ body.dark .card{
 <div class="container" id="app"></div>
 
 <script>
-
 const data = {
  "apps": [ 
     { "name":"KHAN GLOBAL STUDIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s","study_link":"https://spidykgs.vercel.app","tag":"Popular"},
-    { "name":"KHAN GLOBAL STUDIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s","study_link":"https://kgsfreebatchall.vercel.app/","tag":"Popular"},
-    { "name":"SELECTION WAY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10","study_link":"https://spidyway.vercel.app","tag":"Popular"},
-    { "name":"SELECTION WAY TEST SERIES","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10","study_link":"https://testrankingfree.vercel.app/","tag":"Popular"},
-    { "name":"ROJGAR WITH ANKIT","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqvsASIxLwsfdqSKs1qm-bUoY0Ko0vLP6rPGzay47DA&s","study_link":"http://spidyuniverserwa.vercel.app","tag":""},
-    { "name":"STUDY IQ (NEW BATCHES)","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhQ7uIPWu_D8K_xsqsNscViPXM3QiKUAHIXD9Hkontw&s","study_link":"https://sangam.free.nf/studyiq/","tag":""},
-    { "name":"STUDY IQ (OLD BATCHES)","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhQ7uIPWu_D8K_xsqsNscViPXM3QiKUAHIXD9Hkontw&s","study_link":"http://spidyiq.vercel.app","tag":""},
-    { "name":"TESTBOOK","image":"https://play-lh.googleusercontent.com/oZKb4MS_3fA2URqyMW2QvWqm7Bhjikz_L8002o4VLpIfVUmcVXZUa1OI0r5QS_8b3XA=w240-h480-rw","study_link":"https://testbook.examsaathi.site/","tag":"Test❤‍🔥"},
-    { "name":"TESTBOOK","image":"https://play-lh.googleusercontent.com/oZKb4MS_3fA2URqyMW2QvWqm7Bhjikz_L8002o4VLpIfVUmcVXZUa1OI0r5QS_8b3XA=w240-h480-rw","study_link":"https://test.pwthor.live/","tag":"Test❤‍🔥"},
-    { "name":"CDS JOURNEY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS72szB7OQoXI1HfSnyzGvSmwXk5fNhmbn7V_1dZlZbjA&s=10","study_link":"https://cds-journey-omega.vercel.app/","tag":"CDS🇮🇳"},
-    { "name":"PHYSICS WALLAH","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s","study_link":"https://pwthor.live/auth","tag":"Trending"},
-    { "name":"Next Topper","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IXk64isT48glTv-5DobS3YZdAsGHOQV9J3q8IPy8i4kKhyWAcgRWLAEw&s=10","study_link":"https://nt.rarestudy.in/","tag":"Popular"},
-    { "name":"Next Topper","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IXk64isT48glTv-5DobS3YZdAsGHOQV9J3q8IPy8i4kKhyWAcgRWLAEw&s=10","study_link":"https://backbencherz.netlify.app/","tag":"Popular"},
-    { "name":"Vidya Education","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM6hZJkUEeH2DSB_NVVIMcpHGrIE5Es7bEx3wMf_0ZEA&s=10","study_link":"https://learnfree4u.online/VIDYAE/index.php","tag":"New"},
-    { "name":"CW CTET","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAB_URIwHn37n8wv-FR6lhXAS7clYsz2wD_VbdNlJlGVj6S3KVb1i0cXbi&s=10","study_link":"https://sangam.free.nf/CW/course_index.html","tag":"New"},
-    { "name":"CAREERWILL","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s","study_link":"https://runtkyp.xo.je/","tag":"New"},
-    { "name":"VIBRANT ACADEMY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTmuYdKB7UQncU20kBaRb77EZ0ud1wr_Eusl-E_NMvDQ&s=10","study_link":"https://learnbyakp.online/vibrant1","tag":"New"},
-    { "name":"UNACADEMY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMoD260MXEH1aYOimogVz-ZN5bBDHcEJlfXcDX4dbHJg&s=10","study_link":"https://rwalive.xo.je/batches.html","tag":"New"},
-    { "name":"RG VIKRAMJEET","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvpPDIhLQa9pfBaInjOqZgxFsWpDwSWghhJBmHFEti9w&s=10","study_link":"http://rgvikramjeetv1.netlify.app","tag":"Popular"},
-    { "name":"AASH EDUCATION","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGEgPfTb5u0BZr9zrh89ZvGyADlKEe5FCwboZyiNwhaw&s","study_link":"https://kgsfreebatch.free.nf/skjha/home.html?i=1","tag":"New"},
-    { "name":"Winners Institute","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZgproSM4zVC2GOzDXn_1HkZYJ6IvdhM7kY3btSgUXWg&s=10","study_link":"https://kgsfreebatch.free.nf/winn/home.html","tag":"New"},
-    { "name":"Gyanbindu","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFvhxybNgyZB2ctiSjQkoDvGk9KjyK-tG34NGXWwaRA&s=10","study_link":"https://kgsfreebatch.free.nf/tky/home.html?domainId=3377","tag":"New"},
-    { "name":"Coding & Skills","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFcT30jUWxKpkI8NPfMpaW3B6cNPf8ZLy4dRQH2kKU8XrimIrHV_aJbk&s=10","study_link":"https://gatewayclasses.vercel.app","tag":"Coding"}
+    { "name":"SELECTION WAY","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10","study_link":"https://spidyway.vercel.app","tag":"Popular"}
  ]
 };
 
@@ -181,16 +150,32 @@ function render(list){
 }
 render(data.apps);
 
-/* SEARCH */
 document.getElementById("search").addEventListener("input",function(){
     let v=this.value.toLowerCase();
     render(data.apps.filter(a=>a.name.toLowerCase().includes(v)));
 });
 
-/* DARK MODE */
 function toggleDark(){
     document.body.classList.toggle("dark");
 }
+</script>
+
+<!-- 🔥 FIREBASE ADDED (WORKING COMPAT VERSION) -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "XXXX",
+    appId: "XXXX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
 </script>
 
 </body>
